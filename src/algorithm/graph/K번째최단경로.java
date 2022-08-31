@@ -1,4 +1,4 @@
-package algorithm.dijkstra;
+package algorithm.graph;
 /*dist배열을 PriorityQueue로 정의하고 내림차순 정렬 후 K 개수만큼만 관리
 * 최종 계산 후 큐에서 peek하면 그게 K번째 값*/
 import java.io.*;

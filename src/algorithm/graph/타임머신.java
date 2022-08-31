@@ -1,4 +1,4 @@
-package algorithm.dijkstra;
+package algorithm.graph;
 
 /*https://www.acmicpc.net/problem/11657
  * 벨만-포드

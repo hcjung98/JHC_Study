@@ -1,4 +1,4 @@
-package algorithm.dijkstra;
+package algorithm.graph;
 
 /*백준 : https://www.acmicpc.net/problem/1753*/
 /*다익스트라 구현

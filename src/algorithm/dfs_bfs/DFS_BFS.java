@@ -47,9 +47,9 @@ public class DFS_BFS {
                 Collections.sort(list[i]);
             }
 
-            //dfs(S);
+            dfs(S);
             //dfsStack(S);
-            bfs(S);
+            //bfs(S);
 
             bw.write("#" + tc + " ");
             for (int i = 0; i < result.size(); i++) {

@@ -1,4 +1,4 @@
-package algorithm.dijkstra;
+package algorithm.graph;
 
 /*백준 : https://www.acmicpc.net/problem/1753*/
 /*ArrayList에 배열말고 객체를 넣어서 모델링 하기*/

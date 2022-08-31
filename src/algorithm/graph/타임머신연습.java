@@ -1,4 +1,4 @@
-package algorithm.dijkstra;
+package algorithm.graph;
 
 import java.io.*;
 import java.util.ArrayList;

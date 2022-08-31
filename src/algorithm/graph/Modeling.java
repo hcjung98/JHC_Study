@@ -1,11 +1,9 @@
-package algorithm.dijkstra;
+package algorithm.graph;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
 public class Modeling {
@@ -48,15 +46,24 @@ public class Modeling {
 
         /*==============================================*/
         /*인접행렬 모델링 : 플로이드 워셜에서 많이 쓰임*/
-        int[][] adjMatrix = new int[N][N];
+        int[][] graph = new int[N + 1][N + 1];
 
         for (int i = 1; i <= M; i++) {
             st = new StringTokenizer(br.readLine());
             int from = Integer.parseInt(st.nextToken());
             int to = Integer.parseInt(st.nextToken());
             int cost = Integer.parseInt(st.nextToken());
-            adjMatrix[from][to] = cost; // 단방향 그래프 모델링
-            adjMatrix[to][from] = cost; // 양방향 그래프 모델링
+            graph[from][to] = cost; // 단방향 그래프 모델링
+            graph[to][from] = cost; // 양방향 그래프 모델링
+        }
+
+        for (int k = 1; k <= N; k++) {
+            for (int i = 1; i <= N; i++) {
+                for (int j = 1; j <= N; j++) {
+                    if (graph[i][j] > graph[i][k] + graph[k][j]) ;
+                    //K를 거쳐가는 경우와 바로가는 경우를 비교해서 갱신
+                }
+            }
         }
 
         /*PriorityQueue<Node> pq = new PriorityQueue<Node>((o1, o2) -> Long.compare(o1.cost, o2.cost));

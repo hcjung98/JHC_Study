@@ -1,4 +1,4 @@
-package algorithm.dijkstra;
+package algorithm.graph;
 
 /*백준 : https://www.acmicpc.net/problem/1753*/
 
@@ -51,24 +51,27 @@ public class 최단경로2 {
         });*/
 
         // 정점과 정점까지의 죄단경로 비용을 저장하는 Queue
-        PriorityQueue<long[]> queue = new PriorityQueue<long[]>((o1, o2) ->{
+        /*PriorityQueue<long[]> queue = new PriorityQueue<long[]>((o1, o2) ->{
             return Long.compare(o1[1], o2[1]); // 비용이 적은 정정을 먼저
-        });
+        });*/
+
+        PriorityQueue<long[]> queue = new PriorityQueue<>((o1, o2) -> Long.compare(o1[1], o2[1]));
 
         dist[K] = 0;
         queue.add(new long[]{K, dist[K]});
 
         while (!queue.isEmpty()) {
             long[] temp = queue.poll();
-            int now = (int)temp[0]; // 정점
-            if(dist[now] < temp[1]){ //
+            int now = (int) temp[0]; // 정점
+            if (dist[now] < temp[1]) { //
                 continue;
             }
 
             for (int i = 0; i < graph[now].size(); i++) {
                 int next = graph[now].get(i)[0];
-                int cost = graph[now].get(i)[1];;
-                if(dist[next] > dist[now] + cost){
+                int cost = graph[now].get(i)[1];
+                ;
+                if (dist[next] > dist[now] + cost) {
                     dist[next] = dist[now] + cost;
                     queue.add(new long[]{next, dist[next]});
                 }
@@ -76,9 +79,9 @@ public class 최단경로2 {
         }
 
         for (int i = 1; i <= N; i++) {
-            if(dist[i] == Integer.MAX_VALUE){
+            if (dist[i] == Integer.MAX_VALUE) {
                 bw.write("INF \n");
-            }else{
+            } else {
                 bw.write(dist[i] + "\n");
             }
         }
