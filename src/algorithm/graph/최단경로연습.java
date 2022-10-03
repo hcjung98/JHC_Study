@@ -12,7 +12,7 @@ public class 최단경로연습 {
     static ArrayList<int[]>[] graph;
 
     public static void main(String[] args) throws IOException {
-        System.setIn(new FileInputStream("src/algorithm/dijkstra/최단경로연습.txt"));
+        System.setIn(new FileInputStream("src/algorithm/sample/최단경로연습.txt"));
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));

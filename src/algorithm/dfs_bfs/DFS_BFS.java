@@ -73,6 +73,17 @@ public class DFS_BFS {
         }
     }
 
+    static void DFS(int here) {
+        visited[here] = 1;
+
+        for (int i = 0; i < list[here].size(); i++) {
+            int there = list[here].get(i);
+            if (visited[there] == 0) {
+                dfs(there);
+            }
+        }
+    }
+
     static void dfsStack(int start) {
         Stack<Integer> stack = new Stack<>();
         stack.add(start);
@@ -93,6 +104,25 @@ public class DFS_BFS {
     }
 
     static void bfs(int start) {
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(start);
+        visited[start] = 1;
+
+        while (!queue.isEmpty()) {
+            int here = queue.poll();
+            result.add(here);
+
+            for (int i = 0; i < list[here].size(); i++) {
+                int there = list[here].get(i);
+                if (visited[there] == 0) {
+                    queue.add(there);
+                    visited[there] = 1;
+                }
+            }
+        }
+    }
+
+    static void BFS(int start) {
         Queue<Integer> queue = new LinkedList<>();
         queue.add(start);
         visited[start] = 1;

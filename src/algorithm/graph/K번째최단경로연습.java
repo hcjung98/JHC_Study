@@ -73,13 +73,18 @@ public class K번째최단경로연습 {
                 }
             }
 
-            for (int i = 1; i <= N; i++) {
+            /*for (int i = 1; i <= N; i++) {
                 if (dist[i].size() < K) {
                     bw.write("#" + tc + " " + "-1");
                 } else {
                     bw.write("#" + tc + " " + dist[i].peek());
                 }
                 bw.newLine();
+            }*/
+            if(dist[N].size() < K){
+                bw.write("#" + tc + " " + "-1");
+            }else{
+                bw.write("#" + tc + " " + dist[N].peek());
             }
         }
         bw.flush();
